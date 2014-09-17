@@ -94,7 +94,7 @@ add_action( 'widgets_init', 'odeh_web_programming_widgets_init' );
 function odeh_web_programming_scripts() {
 	wp_enqueue_style( 'odeh-web-programming-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'odeh-web-programming-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'odeh-web-programming-sidebar', get_template_directory_uri() . '/js/sidebar.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'odeh-web-programming-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
@@ -128,3 +128,6 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+// Hide WP Admin Bar
+add_filter('show_admin_bar', '__return_false');

@@ -13,9 +13,28 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
+<?php get_sidebar(); ?>
+
+<main id="main" class="site-main" role="main">
+  <div class="splash-container">
+      <div class="splash">
+          <h1 class="splash-head">
+            <div>
+              <?php bloginfo( 'name' ); ?>
+            </div>
+          </h1>
+          <p class="splash-subhead">
+              <?php bloginfo( 'description' ); ?>
+          </p>
+          <p>
+            <a href="http://cs.nyu.edu/~odeh/" class="pure-button pure-button-primary">Prof. Sana Odeh</a>
+          </p>
+      </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content">
       <?php
         // By default, get the slug 
 
@@ -24,16 +43,12 @@ get_header(); ?>
         if ($index_query->have_posts()) {
           $index_query->the_post();
           get_template_part( 'content', 'page' );
-          echo "Index exists";
         } else {
           echo "Hello World!";
         }
       ?>
-      
+    </div>
+  </div>
+</main><!-- #main -->
 
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
