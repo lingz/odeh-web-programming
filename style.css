@@ -15,17 +15,13 @@ Tags:
 * {
   box-sizing: border-box;
 }
-
-html, body, #content {
-  height: 100%;
-  width: 100%;
-}
-#main {
-  height: 100%;
-}
-
 body {
     color: #777;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
 .pure-img-responsive {
@@ -36,7 +32,7 @@ body {
 /*
 Add transition to containers so they can push in and out.
 */
-#content,
+#layout,
 #menu,
 .menu-link {
     -webkit-transition: all 0.2s ease-out;
@@ -46,23 +42,27 @@ Add transition to containers so they can push in and out.
     transition: all 0.2s ease-out;
 }
 
+.menu-link {
+  box-sizing: content-box;
+}
+
 /*
 This is the parent `<div>` that contains the menu and the content area.
 */
-#content {
+#layout {
     position: relative;
     padding-left: 0;
 }
-    #content.active {
+    #layout.active {
         position: relative;
         left: 150px;
     }
-        #content.active #menu {
+        #layout.active #menu {
             left: 150px;
             width: 150px;
         }
 
-        #content.active .menu-link {
+        #layout.active .menu-link {
             left: 150px;
         }
 /*
@@ -95,7 +95,7 @@ The content `<div>` is where all your content goes.
         margin-top: 0;
     }
 
-.content-subhead {
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
     margin: 50px 0 20px 0;
     font-weight: 300;
     color: #888;
@@ -116,7 +116,7 @@ appears on the left side of the page.
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #2d3e50;
+    background: #191818;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -124,7 +124,7 @@ appears on the left side of the page.
     All anchors inside the menu should be styled like this.
     */
     #menu a {
-        color: white;
+        color: #999;
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
     }
@@ -244,7 +244,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         padding-right: 2em;
     }
 
-    #content {
+    #layout {
         padding-left: 150px; /* left col width "#menu" */
         left: 0;
     }
@@ -258,7 +258,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         display: none;
     }
 
-    #content.active .menu-link {
+    #layout.active .menu-link {
         left: 150px;
     }
 }
@@ -275,10 +275,9 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
-    height: 400px;
-    top: 0;
-    left: 0;
-    position: relative;
+    height: 88%;
+    padding-top: 75px;
+    padding-bottom: 75px;
 }
 
 .splash {
@@ -286,7 +285,6 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     width: 80%;
     height: 50%;
     margin: auto;
-    position: absolute;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
@@ -309,31 +307,4 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     color: white;
     letter-spacing: 0.05em;
     opacity: 0.8;
-}
-
-
-/*
- * -- PURE BUTTON STYLES --
- * I want my pure-button elements to look a little different
- */
-.splash .pure-button {
-    background-color: #1f8dd6;
-    color: white;
-    padding: 0.5em 2em;
-    border-radius: 5px;
-}
-
-.splash a.pure-button-primary {
-    background: white;
-    color: #1f8dd6;
-    border-radius: 5px;
-    font-size: 120%;
-}
-
-#menu .pure-menu-heading {
-  text-transform: none;
-}
-
-.menu-link {
-  box-sizing: content-box;
 }

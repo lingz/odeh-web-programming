@@ -9,6 +9,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
 ?>
+
 <a href="#menu" id="menuLink" class="menu-link">
     <!-- Hamburger icon -->
     <span></span>
@@ -23,8 +24,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
           while ($pages_query->have_posts()): 
             $pages_query->the_post();
             $slug = basename(get_permalink());
-            $isIndex = strcmp($slug, "index");
-            if ($isIndex != 0) {
+            $isHome = strcmp($slug, "home");
+            if ($isHome != 0) {
               ?>
                 <li><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
               <?php

@@ -22,4 +22,4 @@
 
 <body <?php body_class(); ?>>
 
-<div id="content" class="site-content">
+<div id="layout" class="site-content">

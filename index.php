@@ -17,7 +17,7 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 
 <main id="main" class="site-main" role="main">
-  <div class="splash-container">
+  <div class="splash-container" style="background-image: url("<?php echo site_url(); ?>/wp-content/themes/odeh/images/index_header.png");>
       <div class="splash">
           <h1 class="splash-head">
             <div>
@@ -38,13 +38,23 @@ get_header(); ?>
       <?php
         // By default, get the slug 
 
-        $index_query = new WP_QUERY("pagename=index");
+        $index_query = new WP_QUERY("pagename=home");
 
         if ($index_query->have_posts()) {
           $index_query->the_post();
-          get_template_part( 'content', 'page' );
+          ?>
+          <div class="entry-content content">
+            <?php the_content(); ?>
+            <?php
+              wp_link_pages( array(
+                'before' => '<div class="page-links">' . __( 'Pages:', 'odeh-web-programming' ),
+                'after'  => '</div>',
+              ) );
+            ?>
+          </div>
+        <?php 
         } else {
-          echo "Hello World!";
+          echo "Hello World there!";
         }
       ?>
     </div>
