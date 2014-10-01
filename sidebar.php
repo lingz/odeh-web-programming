@@ -17,8 +17,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <div id="menu">
   <div class="pure-menu pure-menu-open">
-    <a class="pure-menu-heading" href="/">Home</a>
     <ul>
+      <li>
+        <a class="<?php echo (is_home() ? "active" : ""); ?> " href="/">Home</a>
+      </li>
       <?php 
         $pages_query = new WP_QUERY(array( "post_type" => "page", "orderby" => "menu_order", "order" => "ASC"));
           while ($pages_query->have_posts()): 
@@ -27,7 +29,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
             $isHome = strcmp($slug, "home");
             if ($isHome != 0) {
               ?>
-                <li><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
+                <li><a class="<?php echo (is_page($slug) ? "active" : ""); ?>" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></li>
               <?php
             }
           endwhile;

@@ -175,6 +175,10 @@ appears on the left side of the page.
         color: #fff;
         margin: 0;
     }
+    #menu .active {
+        background: #1f8dd6;
+        color: #fff;
+    }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
 
