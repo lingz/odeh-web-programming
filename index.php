@@ -17,7 +17,7 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 
 <main id="main" class="site-main" role="main">
-  <div class="splash-container" style='background-image:url("<?php echo site_url(); ?>/wp-content/themes/odeh/images/index_header.png");'>
+  <div class="splash-container" style='background-image:url("<?php echo site_url(); ?>/wp-content/themes/odeh/images/index_header_light_2.png");'>
       <div class="splash">
           <h1 class="splash-head">
             <div>
@@ -28,7 +28,7 @@ get_header(); ?>
               <?php bloginfo( 'description' ); ?>
           </p>
           <p>
-            <a href="http://cs.nyu.edu/~odeh/" class="pure-button pure-button-primary">Prof. Sana Odeh</a>
+            <a id="professor" href="http://cs.nyu.edu/~odeh/" class="pure-button">Prof. Sana Odeh</a>
           </p>
       </div>
   </div>
