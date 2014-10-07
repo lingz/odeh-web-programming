@@ -25,7 +25,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         $pages_query = new WP_QUERY(array( "post_type" => "page", "orderby" => "menu_order", "order" => "ASC"));
           while ($pages_query->have_posts()): 
             $pages_query->the_post();
-            $slug = basename(get_the_slug());
+            global $post;
+            $slug = $post->post_name;
             $isHome = strcmp($slug, "home");
             if ($isHome != 0) {
               ?>
