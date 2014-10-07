@@ -131,3 +131,15 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // Hide WP Admin Bar
 add_filter('show_admin_bar', '__return_false');
+
+function get_the_slug( $id=null ){
+  if( empty($id) ):
+    global $post;
+    if( empty($post) )
+      return ''; // No global $post var available.
+    $id = $post->ID;
+  endif;
+
+  $slug = basename( get_permalink($id) );
+  return $slug;
+}
