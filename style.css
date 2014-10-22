@@ -34,11 +34,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #ca3c3c;
 }
 
-#professor {
-  background-color: #ca3c3c;
-  color: white;
-}
-
 /*
 Add transition to containers so they can push in and out.
 */
@@ -93,17 +88,17 @@ The content `<div>` is where all your content goes.
      padding: 2.5em 2em 0;
      border-bottom: 1px solid #eee;
  }
-    .header h1 {
-        margin: 0.2em 0;
-        font-size: 3em;
-        font-weight: 300;
-    }
-     .header h2 {
-        font-weight: 300;
-        color: #ca3c3c;
-        padding: 0;
-        margin-top: 0;
-    }
+  .header h1 {
+      margin: 0.2em 0;
+      font-size: 3em;
+      font-weight: 300;
+  }
+   .header h2 {
+      font-weight: 100;
+      color: #ccc;
+      padding: 0;
+      margin-top: 0;
+  }
 
 .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
     margin: 50px 0 20px 0;
@@ -126,7 +121,7 @@ appears on the left side of the page.
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #e3e3e3;
+    background: #eeeeee;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -278,50 +273,3 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 }
 
-
-/*
- * -- SPLASH STYLES --
- * This is the blue top section that appears on the page.
- */
-
-.splash-container {
-    background: #ca3c3c;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 88%;
-    padding-top: 75px;
-    padding-bottom: 75px;
-}
-
-.splash {
-    /* absolute center .splash within .splash-container */
-    width: 80%;
-    height: 50%;
-    margin: auto;
-    top: 100px; left: 0; bottom: 0; right: 0;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-/* This is the main heading that appears on the blue section */
-.splash-head {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border: 3px solid white;
-    padding: 1em 1.6em;
-    font-weight: 100;
-    border-radius: 5px;
-    line-height: 1em;
-}
-
-/* This is the subheading that appears on the blue section */
-.splash-subhead {
-    color: white;
-    letter-spacing: 0.05em;
-    opacity: 0.8;
-}

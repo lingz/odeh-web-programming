@@ -17,23 +17,15 @@ get_header(); ?>
 <?php get_sidebar(); ?>
 
 <main id="main" class="site-main" role="main">
-  <div class="splash-container" style='background-image:url("<?php echo site_url(); ?>/wp-content/themes/odeh/images/index_header_light_3.png");'>
-      <div class="splash">
-          <h1 class="splash-head">
-            <div>
-              <?php bloginfo( 'name' ); ?>
-            </div>
-          </h1>
-          <p class="splash-subhead">
-              <?php bloginfo( 'description' ); ?>
-          </p>
-          <p>
-            <a id="professor" href="http://cs.nyu.edu/~odeh/" class="pure-button">Prof. Sana Odeh</a>
-          </p>
-      </div>
-  </div>
 
-  <div class="content-wrapper">
+    <header class="header">
+      <h1>
+          <?php bloginfo( 'name' ); ?>
+      </h1>
+      <h2>
+        <?php bloginfo( 'description' ); ?>
+      </h2>
+    </header>
     <div class="content">
       <?php
         // By default, get the slug 
@@ -58,7 +50,6 @@ get_header(); ?>
         }
       ?>
     </div>
-  </div>
 </main><!-- #main -->
 
 <?php get_footer(); ?>
