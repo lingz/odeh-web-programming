@@ -9,10 +9,10 @@
 <div id="main">
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="header entry-header">
-        <h2>
+        <h4>
           New York University <br/>
           <?php bloginfo( 'name' ); ?>
-        </h2>
+        </h4>
         <h1>
           <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         </h1>
