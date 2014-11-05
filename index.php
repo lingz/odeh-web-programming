@@ -22,6 +22,7 @@ get_header(); ?>
       <h1>
           <?php bloginfo( 'name' ); ?>
       </h1>
+      <h2>New York Universty</h2>
       <h2>
         <?php bloginfo( 'description' ); ?>
       </h2>

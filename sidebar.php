@@ -22,7 +22,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         <a class="<?php echo (is_home() ? "active" : ""); ?> " href="/">Home</a>
       </li>
       <?php 
-        $pages_query = new WP_QUERY(array( "post_type" => "page", "orderby" => "menu_order", "order" => "ASC"));
+        $pages_query = new WP_QUERY(array( "post_type" => "page", "orderby" => "menu_order", "order" => "ASC", "posts_per_page" => -1));
           while ($pages_query->have_posts()): 
             $pages_query->the_post();
             global $post;
