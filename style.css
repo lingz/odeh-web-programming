@@ -169,7 +169,7 @@ appears on the left side of the page.
     This styles the selected menu item `<li>`.
     */
     #menu .pure-menu-selected,
-    #menu .pure-menu-heading {
+    {
         background: #ca3c3c;
     }
         /*
@@ -279,3 +279,39 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 }
 
+/* --- More sidebar styles --*/
+
+.group-node {
+  display: none;
+  border-width: 0 0 1px 0;
+  border-color: #ee6363;
+  border-style: solid;
+}
+#menu .group-header {
+  display: block;
+  border-width: 0 0 1px 0;
+  border-color: #ee6363;
+  border-style: solid;
+}
+.group-header:hover {
+  background: #ee6363;
+  color: white;
+}
+#menu .group-header.expanded {
+  background: #ee6363;
+  color: white;
+}
+.group-header .up-arrow {
+  display: none;
+}
+.group-header.expanded .down-arrow {
+  display: none;
+}
+.group-header.expanded .up-arrow {
+  display: inline;
+}
+
+
+.visible {
+  display: block;
+}
